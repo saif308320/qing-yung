@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QING YUN · 晴云 | Fine Loose-Leaf Teas</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍃</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CORE SYSTEM VARS --- */
+        :root {
+            --bg-cream: #f6f1e6;
+            --bg-cream-card: #eee8dc;
+            --deep-jade: #16382c;
+            --jade-dark: #0e241c;
+            --antique-gold: #c5a059;
+            --gold-light: #e5cd98;
+            --text-dark: #1b2421;
+            --text-muted: #5a6660;
+            --border-gold: rgba(197, 160, 89, 0.4);
+            --border-light: rgba(22, 56, 44, 0.12);
+            --shadow-subtle: 0 15px 35px rgba(22, 56, 44, 0.06);
+            --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .serif {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.06em;
+            font-weight: 500;
+        }
+
+        a { color: inherit; text-decoration: none; transition: var(--transition); }
+        button { cursor: pointer; font-family: inherit; border: none; background: none; transition: var(--transition); }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        .divider-gold { height: 1px; background: linear-gradient(90deg, transparent, var(--antique-gold), transparent); margin: 0 auto; width: 100%; opacity: 0.6; }
+        .section-padding { padding: 110px 0; }
+        .text-center { text-align: center; }
+
+        .tagline {
+            color: var(--antique-gold);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            margin-bottom: 12px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .section-title { font-size: 2.5rem; color: var(--deep-jade); margin-bottom: 16px; }
+        .section-desc { color: var(--text-muted); max-width: 620px; margin: 0 auto 52px auto; font-weight: 300; font-size: 1rem; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            font-size: 0.8rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-radius: 2px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
+            transform: translateX(-120%);
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1;
+            pointer-events: none;
+        }
+        .btn:hover::before { transform: translateX(120%); }
+
+        .btn-primary { background-color: var(--deep-jade); color: var(--bg-cream); border: 1px solid var(--deep-jade); }
+        .btn-primary:hover { background-color: var(--jade-dark); border-color: var(--antique-gold); box-shadow: 0 10px 28px rgba(22, 56, 44, 0.3); transform: translateY(-2px); }
+        .btn-outline { border: 1px solid var(--antique-gold); color: var(--deep-jade); }
+        .btn-outline:hover { background-color: var(--antique-gold); color: #fff; box-shadow: 0 10px 24px rgba(197, 160, 89, 0.3); transform: translateY(-2px); }
+
+        .badge {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            padding: 5px 12px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+        .badge-gold { background: rgba(197, 160, 89, 0.15); color: var(--antique-gold); border: 1px solid var(--border-gold); backdrop-filter: blur(4px); }
+
+        /* --- SUBTLE PREMIUM GRAIN OVERLAY --- */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.035;
+            mix-blend-mode: multiply;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        /* --- SCROLL REVEAL (single orchestrated pattern) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+        }
+
+        /* --- 3D ANIMATED LOADER --- */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background-color: var(--jade-dark);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-cream);
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        #preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+        .loader-3d-wrapper {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 25px;
+            perspective: 600px;
+        }
+
+        .cup-3d {
+            width: 60px;
+            height: 50px;
+            background: linear-gradient(135deg, #dcc188 0%, #b8964f 100%);
+            border-radius: 0 0 30px 30px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            box-shadow: inset -5px -5px 10px rgba(0,0,0,0.3), 0 15px 25px rgba(0,0,0,0.5);
+            transform-style: preserve-3d;
+            animation: float3d 3s infinite ease-in-out;
+        }
+
+        .cup-3d::after {
+            content: '';
+            position: absolute;
+            right: -14px;
+            top: 8px;
+            width: 16px;
+            height: 24px;
+            border: 4px solid var(--antique-gold);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .saucer-3d {
+            width: 80px;
+            height: 10px;
+            background: var(--antique-gold);
+            border-radius: 50%;
+            position: absolute;
+            bottom: 12px;
+            left: 10px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+        }
+
+        .steam {
+            position: absolute;
+            top: 10px;
+            left: 32px;
+            width: 8px;
+            height: 20px;
+            background: rgba(246, 241, 230, 0.4);
+            border-radius: 50%;
+            filter: blur(4px);
+            animation: steamRise 2s infinite ease-out;
+        }
+
+        .steam:nth-child(2) { left: 48px; animation-delay: 0.6s; }
+
+        @keyframes float3d {
+            0%, 100% { transform: translateY(0) rotateY(0deg); }
+            50% { transform: translateY(-10px) rotateY(15deg); }
+        }
+
+        @keyframes steamRise {
+            0% { transform: translateY(0) scaleX(1); opacity: 0.8; }
+            100% { transform: translateY(-35px) scaleX(2.5); opacity: 0; }
+        }
+
+        /* --- 1. TOP BAR --- */
+        .top-bar {
+            background-color: var(--jade-dark);
+            color: var(--bg-cream);
+            font-size: 0.72rem;
+            letter-spacing: 0.15em;
+            padding: 10px 0;
+            text-align: center;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        /* --- 2. NAVBAR --- */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: rgba(246, 241, 230, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 500;
+            border-bottom: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+        .navbar.scrolled { box-shadow: 0 8px 24px rgba(22, 56, 44, 0.08); border-bottom-color: var(--border-gold); }
+
+        .nav-container { display: flex; align-items: center; justify-content: space-between; height: 85px; }
+
+        .logo { font-size: 1.6rem; font-weight: 600; color: var(--deep-jade); display: flex; flex-direction: column; line-height: 1; }
+        .logo span { font-size: 0.7rem; color: var(--antique-gold); letter-spacing: 0.25em; margin-top: 4px; }
+
+        .nav-links { display: flex; gap: 36px; list-style: none; }
+        .nav-links a { font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dark); font-weight: 500; position: relative; }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 1px; background-color: var(--antique-gold); transition: var(--transition);
+        }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-icons { display: flex; align-items: center; gap: 20px; }
+
+        .icon-btn {
+            position: relative;
+            font-size: 1.15rem;
+            color: var(--deep-jade);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .icon-btn:hover { background-color: rgba(22, 56, 44, 0.06); color: var(--antique-gold); border-color: var(--border-gold); }
+
+        .cart-count {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            background-color: var(--antique-gold);
+            color: white;
+            font-size: 0.65rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        /* --- LUXURY SEARCH OVERLAY --- */
+        .search-modal {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(14, 36, 28, 0.96);
+            backdrop-filter: blur(15px);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-modal.active { opacity: 1; visibility: visible; }
+        .search-container { width: 100%; max-width: 650px; padding: 20px; position: relative; }
+        .search-input-wrap { position: relative; border-bottom: 2px solid var(--antique-gold); display: flex; align-items: center; }
+        .search-input-wrap i { color: var(--antique-gold); font-size: 1.5rem; margin-right: 15px; }
+
+        .search-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--bg-cream);
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            padding: 12px 0;
+        }
+
+        .search-input::placeholder { color: rgba(246, 241, 230, 0.4); }
+        .close-search { position: absolute; top: -60px; right: 20px; color: var(--bg-cream); font-size: 2rem; cursor: pointer; }
+        .search-suggestions { margin-top: 24px; color: rgba(246, 241, 230, 0.6); font-size: 0.85rem; }
+        .search-tags { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+        .search-tag { border: 1px solid var(--border-gold); padding: 6px 14px; border-radius: 20px; color: var(--bg-cream); font-size: 0.8rem; cursor: pointer; }
+        .search-tag:hover { background-color: var(--antique-gold); }
+
+        /* --- 3. HERO --- */
+        .hero { padding: 90px 0 130px 0; position: relative; }
+        .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+        .hero-content h1 { font-size: 3.6rem; line-height: 1.15; color: var(--deep-jade); margin-bottom: 24px; }
+        .hero-content p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 40px; font-weight: 300; }
+        .hero-ctas { display: flex; gap: 18px; margin-bottom: 50px; }
+        .hero-badges { display: flex; gap: 28px; border-top: 1px solid var(--border-light); padding-top: 28px; }
+        .trust-badge { display: flex; align-items: center; gap: 10px; font-size: 0.82rem; color: var(--text-dark); font-weight: 500; }
+        .trust-badge i { color: var(--antique-gold); }
+
+        .hero-image-wrapper { position: relative; text-align: center; }
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 6%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 92%;
+            height: 96%;
+            border: 1px solid var(--border-gold);
+            border-radius: 260px 260px 0 0;
+            z-index: -1;
+        }
+        .hero-img {
+            width: 88%;
+            height: 520px;
+            object-fit: cover;
+            border-radius: 260px 260px 0 0;
+            margin: 0 auto;
+            box-shadow: var(--shadow-premium);
+            border: 1px solid var(--border-gold);
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hero-image-wrapper:hover .hero-img { transform: scale(1.02); }
+
+        /* --- 4. MARQUEE STRIP --- */
+        .marquee-container {
+            background-color: var(--deep-jade);
+            color: var(--bg-cream);
+            padding: 18px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: 1px solid var(--border-gold);
+            border-bottom: 1px solid var(--border-gold);
+        }
+
+        .marquee-content { display: inline-block; animation: marquee 30s linear infinite; }
+        .marquee-item { display: inline-block; font-family: 'Cinzel', serif; font-size: 0.88rem; letter-spacing: 0.2em; text-transform: uppercase; margin: 0 24px; }
+        .marquee-item i { color: var(--antique-gold); margin-left: 24px; }
+
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* --- 5. CATEGORIES --- */
+        .category-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .category-card { position: relative; height: 400px; border-radius: 2px; overflow: hidden; box-shadow: var(--shadow-subtle); }
+        .category-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+        .category-card:hover img { transform: scale(1.08); }
+        .category-overlay {
+            position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 20%, rgba(14, 36, 28, 0.92) 100%);
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; color: white;
+        }
+        .category-overlay h3 { font-size: 1.35rem; margin-bottom: 4px; }
+        .category-overlay span { font-size: 0.78rem; color: var(--gold-light); letter-spacing: 0.12em; text-transform: uppercase; }
+
+        /* --- 6. BESTSELLERS --- */
+        .filter-tabs { display: flex; justify-content: center; gap: 14px; margin-bottom: 44px; flex-wrap: wrap; }
+        .tab-btn { padding: 10px 24px; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid transparent; color: var(--text-muted); border-radius: 2px; }
+        .tab-btn.active { border-color: var(--antique-gold); color: var(--deep-jade); background-color: var(--bg-cream-card); font-weight: 600; }
+
+        .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .product-card {
+            background-color: var(--bg-cream-card); border: 1px solid var(--border-light); border-radius: 2px; padding: 24px;
+            position: relative; transition: var(--transition); display: flex; flex-direction: column;
+        }
+        .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-premium); border-color: var(--border-gold); }
+        .product-badge { position: absolute; top: 24px; left: 24px; z-index: 2; }
+        .product-img-wrap { height: 230px; margin-bottom: 24px; overflow: hidden; display: flex; align-items: center; justify-content: center; border-radius: 2px; }
+        .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .product-card:hover .product-img-wrap img { transform: scale(1.06); }
+        .product-title { font-size: 1.15rem; color: var(--deep-jade); margin-bottom: 4px; }
+        .product-cn-name { font-size: 0.8rem; color: var(--antique-gold); margin-bottom: 12px; display: block; font-weight: 500; }
+        .product-notes { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px; font-style: italic; }
+        .product-meta { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 18px; border-top: 1px solid var(--border-light); }
+        .product-price { font-size: 1.2rem; font-weight: 600; color: var(--deep-jade); }
+
+        .add-cart-btn {
+            background-color: var(--deep-jade); color: white; width: 40px; height: 40px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 0.95rem; transition: var(--transition);
+        }
+        .add-cart-btn:hover { background-color: var(--antique-gold); transform: scale(1.1) rotate(90deg); }
+
+        /* --- 7. FEATURED SPOTLIGHT --- */
+        .spotlight { background-color: var(--deep-jade); color: var(--bg-cream); }
+        .spotlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .spotlight-gallery { display: grid; grid-template-columns: 4fr 1fr; gap: 16px; }
+        .spotlight-main-img { height: 440px; width: 100%; object-fit: cover; border: 1px solid var(--border-gold); box-shadow: var(--shadow-premium); }
+        .spotlight-thumbs { display: flex; flex-direction: column; gap: 12px; }
+        .spotlight-thumb { height: 98px; width: 100%; object-fit: cover; cursor: pointer; opacity: 0.5; border: 1px solid transparent; transition: var(--transition); }
+        .spotlight-thumb.active, .spotlight-thumb:hover { opacity: 1; border-color: var(--antique-gold); }
+        .spotlight-info h2 { color: var(--bg-cream); font-size: 2.6rem; margin-bottom: 16px; }
+
+        .specs-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; background: rgba(255,255,255,0.04);
+            padding: 18px; border-radius: 2px; margin: 24px 0; border: 1px solid var(--border-gold);
+        }
+        .spec-item label { display: block; font-size: 0.68rem; text-transform: uppercase; color: var(--antique-gold); letter-spacing: 0.1em; margin-bottom: 4px; }
+        .spec-item span { font-size: 0.9rem; font-weight: 500; }
+
+        .steeping-card { border: 1px dashed var(--border-gold); padding: 18px; margin-bottom: 28px; font-size: 0.85rem; background: rgba(197, 160, 89, 0.05); }
+        .steeping-card h4 { color: var(--gold-light); margin-bottom: 6px; font-size: 0.95rem; }
+
+        .purchase-controls { display: flex; gap: 16px; align-items: center; margin-bottom: 28px; }
+        .size-selector { display: flex; gap: 8px; }
+        .size-btn { border: 1px solid rgba(255,255,255,0.2); color: white; padding: 10px 16px; font-size: 0.8rem; }
+        .size-btn.active { border-color: var(--antique-gold); background: var(--antique-gold); }
+
+        .quantity-stepper { display: flex; align-items: center; border: 1px solid rgba(255,255,255,0.2); }
+        .quantity-stepper button { color: white; padding: 10px 16px; font-size: 1rem; }
+        .quantity-stepper span { padding: 10px 16px; font-size: 0.9rem; font-weight: 600; }
+
+        /* --- 8. TEA REGIONS --- */
+        .regions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .region-card { background: var(--bg-cream-card); border: 1px solid var(--border-light); border-radius: 2px; overflow: hidden; box-shadow: var(--shadow-subtle); transition: var(--transition); }
+        .region-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-premium); border-color: var(--border-gold); }
+        .region-img { height: 220px; width: 100%; object-fit: cover; }
+        .region-content { padding: 28px; }
+        .region-meta { display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--antique-gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; font-weight: 600; }
+        .region-content h3 { color: var(--deep-jade); font-size: 1.35rem; margin-bottom: 6px; }
+        .region-sig { font-size: 0.85rem; font-weight: 600; margin-bottom: 12px; color: var(--text-dark); }
+        .region-content p { font-size: 0.88rem; color: var(--text-muted); }
+
+        /* --- 9. CEREMONY --- */
+        .ceremony-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .step-card { text-align: center; padding: 36px 24px; background: var(--bg-cream); border: 1px solid var(--border-light); box-shadow: var(--shadow-subtle); position: relative; transition: var(--transition); }
+        .step-card:hover { border-color: var(--antique-gold); transform: translateY(-4px); }
+        .step-num { width: 42px; height: 42px; border-radius: 50%; background-color: var(--antique-gold); color: white; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px auto; font-family: 'Cinzel', serif; font-weight: 600; }
+        .step-icon { font-size: 2rem; color: var(--deep-jade); margin-bottom: 16px; display: block; }
+        .step-card h3 { color: var(--deep-jade); margin-bottom: 10px; font-size: 1.15rem; }
+        .step-card p { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* --- 10. OUR STORY --- */
+        .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+        .story-img-wrap { position: relative; }
+        .story-img { width: 100%; height: 500px; object-fit: cover; border-radius: 2px; box-shadow: var(--shadow-premium); }
+        .quote-box {
+            position: absolute; bottom: -30px; right: -30px; background: var(--deep-jade); color: var(--bg-cream);
+            padding: 32px; max-width: 340px; border: 1px solid var(--border-gold); box-shadow: var(--shadow-premium);
+        }
+        .quote-box p { font-size: 0.92rem; font-style: italic; margin-bottom: 12px; }
+        .quote-box span { font-size: 0.75rem; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.1em; }
+
+        .counters-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; padding-top: 44px; border-top: 1px solid var(--border-light); }
+        .counter-item h3 { font-size: 2.8rem; color: var(--deep-jade); }
+        .counter-item p { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+        /* --- 11. SUSTAINABILITY --- */
+        .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .value-card { border: 1px solid var(--border-light); padding: 36px 26px; background: var(--bg-cream-card); transition: var(--transition); }
+        .value-card:hover { border-color: var(--antique-gold); transform: translateY(-4px); box-shadow: var(--shadow-subtle); }
+        .value-icon { font-size: 2rem; color: var(--antique-gold); margin-bottom: 18px; }
+        .value-card h3 { color: var(--deep-jade); font-size: 1.15rem; margin-bottom: 10px; }
+        .value-card p { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* --- 12. REVIEWS --- */
+        .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .review-card { background: var(--bg-cream-card); padding: 36px; border: 1px solid var(--border-light); display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-subtle); transition: var(--transition); }
+        .review-card:hover { box-shadow: var(--shadow-premium); transform: translateY(-4px); }
+        .review-stars { color: var(--antique-gold); margin-bottom: 16px; font-size: 0.85rem; }
+        .review-text { font-style: italic; font-size: 0.92rem; color: var(--text-dark); margin-bottom: 28px; }
+        .review-author { display: flex; align-items: center; gap: 16px; }
+        .avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border-gold); }
+        .author-info h4 { font-size: 0.92rem; color: var(--deep-jade); }
+        .author-info span { font-size: 0.75rem; color: var(--text-muted); }
+
+        /* --- 13. GIFT SETS --- */
+        .gifts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .gift-card { background: var(--bg-cream-card); border: 1px solid var(--border-light); overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow-subtle); transition: var(--transition); }
+        .gift-card:hover { box-shadow: var(--shadow-premium); transform: translateY(-6px); border-color: var(--border-gold); }
+        .gift-img { height: 260px; width: 100%; object-fit: cover; transition: transform 0.7s ease; }
+        .gift-card:hover .gift-img { transform: scale(1.06); }
+        .gift-content { padding: 28px; display: flex; flex-direction: column; flex-grow: 1; }
+        .gift-content h3 { color: var(--deep-jade); margin-bottom: 8px; font-size: 1.25rem; }
+        .gift-content p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px; }
+        .gift-bottom { margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding-top: 18px; border-top: 1px solid var(--border-light); }
+
+        /* --- 14. PRESS STRIP --- */
+        .press-strip { border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); padding: 44px 0; background: rgba(22, 56, 44, 0.03); }
+        .press-logos { display: flex; justify-content: space-between; align-items: center; opacity: 0.75; flex-wrap: wrap; gap: 20px; }
+        .press-item { font-family: 'Cinzel', serif; font-size: 1.05rem; letter-spacing: 0.18em; color: var(--deep-jade); font-weight: 600; text-transform: uppercase; }
+
+        /* --- 15. GALLERY --- */
+        .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+        .gallery-item { position: relative; height: 260px; overflow: hidden; cursor: pointer; border-radius: 2px; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .gallery-item:hover img { transform: scale(1.08); }
+
+        /* --- 16. FAQ --- */
+        .faq-container { max-width: 820px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--border-light); margin-bottom: 16px; }
+        .faq-question { width: 100%; text-align: left; padding: 22px 0; font-size: 1.1rem; color: var(--deep-jade); display: flex; justify-content: space-between; align-items: center; font-weight: 500; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; color: var(--text-muted); font-size: 0.92rem; padding-bottom: 0; }
+        .faq-item.active .faq-answer { max-height: 220px; padding-bottom: 22px; }
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
+        .faq-icon { transition: transform 0.3s ease; font-size: 1.2rem; color: var(--antique-gold); }
+
+        /* --- 17. NEWSLETTER --- */
+        .newsletter { background-color: var(--deep-jade); color: var(--bg-cream); text-align: center; }
+        .newsletter h2 { color: var(--bg-cream); }
+        .newsletter-form { display: flex; max-width: 520px; margin: 36px auto 0 auto; gap: 10px; }
+        .newsletter-input { flex-grow: 1; padding: 16px 22px; border: 1px solid var(--border-gold); background: rgba(255,255,255,0.06); color: white; font-family: inherit; }
+        .newsletter-input::placeholder { color: rgba(255,255,255,0.5); }
+        .newsletter-input:focus { outline: none; background: rgba(255,255,255,0.12); }
+
+        /* --- 18. FOOTER --- */
+        footer { background-color: var(--jade-dark); color: var(--bg-cream); padding: 90px 0 40px 0; font-size: 0.88rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 70px; }
+        .footer-logo { font-size: 1.6rem; color: var(--bg-cream); margin-bottom: 18px; display: inline-block; }
+        .footer-col h4 { color: var(--gold-light); font-size: 0.9rem; margin-bottom: 22px; letter-spacing: 0.12em; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 14px; }
+        .footer-links a { color: rgba(246, 241, 230, 0.7); }
+        .footer-links a:hover { color: var(--antique-gold); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; color: rgba(246, 241, 230, 0.45); font-size: 0.78rem; }
+        .payment-icons { display: flex; gap: 16px; font-size: 1.3rem; color: var(--gold-light); }
+
+        /* --- 19. CART DRAWER --- */
+        .cart-drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+        .cart-drawer-overlay.active { opacity: 1; pointer-events: all; }
+
+        .cart-drawer {
+            position: fixed; top: 0; right: -460px; width: 100%; max-width: 460px; height: 100%;
+            background: var(--bg-cream); z-index: 1001; transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex; flex-direction: column; box-shadow: -10px 0 35px rgba(0,0,0,0.15);
+        }
+
+        .cart-drawer.active { right: 0; }
+        .cart-header { padding: 28px; border-bottom: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: center; }
+        .cart-header h3 { color: var(--deep-jade); font-size: 1.3rem; }
+        .close-cart { font-size: 1.5rem; color: var(--text-dark); cursor: pointer; }
+
+        .shipping-progress { padding: 18px 28px; background: var(--bg-cream-card); border-bottom: 1px solid var(--border-light); font-size: 0.82rem; }
+        .progress-bar { height: 5px; background: rgba(0,0,0,0.08); border-radius: 3px; margin-top: 10px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--antique-gold), var(--gold-light)); width: 40%; transition: width 0.4s ease; }
+
+        .cart-body { padding: 28px; flex-grow: 1; overflow-y: auto; }
+        .empty-cart-msg { text-align: center; padding: 50px 0; color: var(--text-muted); }
+        .cart-item { display: flex; gap: 18px; margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid var(--border-light); align-items: center; }
+        .cart-item-img { width: 75px; height: 75px; object-fit: cover; border-radius: 2px; }
+        .cart-item-details { flex-grow: 1; }
+        .cart-item-details h4 { font-size: 0.95rem; color: var(--deep-jade); }
+        .cart-item-price { font-size: 0.88rem; color: var(--antique-gold); margin-top: 4px; font-weight: 600; }
+        .cart-item-controls { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+        .cart-item-controls button { width: 24px; height: 24px; border: 1px solid var(--border-light); display: flex; align-items: center; justify-content: center; border-radius: 2px; font-weight: 600; }
+        .cart-item-controls span { font-size: 0.85rem; }
+        .remove-item { color: #c0392b; cursor: pointer; font-size: 0.9rem; margin-left: 10px; }
+
+        .cart-footer { padding: 28px; border-top: 1px solid var(--border-light); background: var(--bg-cream-card); }
+        .cart-subtotal { display: flex; justify-content: space-between; font-size: 1.15rem; font-weight: 600; color: var(--deep-jade); margin-bottom: 18px; }
+        .checkout-btn { width: 100%; }
+
+        /* --- LIGHTBOX --- */
+        .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.92); backdrop-filter: blur(8px); z-index: 2500; display: none; align-items: center; justify-content: center; }
+        .lightbox.active { display: flex; }
+        .lightbox img { max-width: 88%; max-height: 82vh; border: 1px solid var(--antique-gold); box-shadow: var(--shadow-premium); }
+        .lightbox-close { position: absolute; top: 24px; right: 36px; color: white; font-size: 2.2rem; cursor: pointer; }
+
+        /* MEDIA QUERIES */
+        @media (max-width: 1024px) {
+            .hero-grid, .spotlight-grid, .story-grid { grid-template-columns: 1fr; gap: 50px; }
+            .category-grid, .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .products-grid, .regions-grid, .reviews-grid, .gifts-grid { grid-template-columns: repeat(2, 1fr); }
+            .ceremony-steps { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* --- MOBILE NAV (hamburger + slide-out drawer) --- */
+        .hamburger-btn { display: none; }
+        .mobile-nav-overlay {
+            position: fixed; inset: 0; background: rgba(14, 36, 28, 0.55); backdrop-filter: blur(3px);
+            z-index: 1600; opacity: 0; visibility: hidden; transition: var(--transition);
+        }
+        .mobile-nav-overlay.active { opacity: 1; visibility: visible; }
+        .mobile-nav-drawer {
+            position: fixed; top: 0; right: -320px; width: 82%; max-width: 320px; height: 100%;
+            background: var(--bg-cream); z-index: 1601; transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: -10px 0 35px rgba(0,0,0,0.2); display: flex; flex-direction: column; padding: 28px 8px;
+        }
+        .mobile-nav-drawer.active { right: 0; }
+        .mobile-nav-header { display: flex; justify-content: space-between; align-items: center; padding: 0 20px 24px 20px; border-bottom: 1px solid var(--border-light); margin-bottom: 12px; }
+        .mobile-nav-header .logo { font-size: 1.2rem; }
+        .close-mobile-nav { font-size: 1.6rem; color: var(--deep-jade); cursor: pointer; }
+        .mobile-nav-links { list-style: none; display: flex; flex-direction: column; }
+        .mobile-nav-links a {
+            display: block; padding: 16px 20px; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase;
+            color: var(--text-dark); font-weight: 500; border-bottom: 1px solid var(--border-light);
+        }
+        .mobile-nav-links a:hover, .mobile-nav-links a:active { color: var(--antique-gold); background: rgba(197,160,89,0.06); }
+
+        /* --- RESPONSIVE OVERHAUL --- */
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .hamburger-btn { display: flex; }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding { padding: 64px 0; }
+            .container { padding: 0 18px; }
+
+            .top-bar { font-size: 0.62rem; padding: 8px 14px; letter-spacing: 0.06em; line-height: 1.5; }
+            .nav-container { height: 68px; }
+            .logo { font-size: 1.2rem; }
+            .logo span { font-size: 0.58rem; letter-spacing: 0.18em; }
+            .icon-btn { width: 38px; height: 38px; font-size: 1rem; }
+            .nav-icons { gap: 10px; }
+
+            .hero { padding: 40px 0 60px 0; }
+            .hero-grid { gap: 34px; }
+            .hero-content h1 { font-size: 2.1rem; line-height: 1.25; margin-bottom: 16px; }
+            .hero-content p { font-size: 0.95rem; margin-bottom: 26px; }
+            .hero-ctas { flex-direction: column; gap: 12px; }
+            .hero-ctas .btn { width: 100%; }
+            .hero-badges { flex-direction: column; gap: 14px; padding-top: 20px; }
+            .hero-img { width: 100%; height: 320px; border-radius: 140px 140px 0 0; }
+            .hero-image-wrapper::before { border-radius: 140px 140px 0 0; }
+
+            .section-title { font-size: 1.7rem; }
+            .section-desc { font-size: 0.9rem; margin-bottom: 34px; }
+
+            .category-grid, .values-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+            .category-card { height: 220px; }
+
+            .products-grid, .regions-grid, .reviews-grid, .gifts-grid, .ceremony-steps { grid-template-columns: 1fr; gap: 20px; }
+            .filter-tabs { gap: 8px; margin-bottom: 30px; }
+            .tab-btn { padding: 8px 16px; font-size: 0.72rem; }
+
+            .spotlight-grid { gap: 34px; }
+            .spotlight-gallery { grid-template-columns: 1fr; }
+            .spotlight-main-img { height: 260px; }
+            .spotlight-thumbs { flex-direction: row; }
+            .spotlight-thumb { height: 70px; }
+            .spotlight-info h2 { font-size: 1.8rem; }
+            .specs-grid { grid-template-columns: 1fr 1fr; }
+            .purchase-controls { flex-wrap: wrap; gap: 12px; }
+
+            .story-grid { gap: 60px; }
+            .story-img { height: 320px; }
+            .quote-box { position: static; margin-top: 20px; max-width: 100%; }
+            .counters-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+            .counter-item h3 { font-size: 1.8rem; }
+
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .gallery-item { height: 150px; }
+
+            .press-logos { justify-content: center; gap: 24px; }
+            .press-item { font-size: 0.8rem; }
+
+            .newsletter-form { flex-direction: column; }
+
+            .footer-grid { grid-template-columns: 1fr; gap: 36px; margin-bottom: 40px; }
+            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+
+            .cart-drawer { max-width: 100%; }
+            .lightbox img { max-width: 94%; }
+
+            .marquee-item { font-size: 0.74rem; margin: 0 14px; }
+        }
+
+        @media (max-width: 480px) {
+            .category-grid, .values-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 1.75rem; }
+            .specs-grid { grid-template-columns: 1fr; }
+            .counters-grid { grid-template-columns: 1fr 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader-3d-wrapper">
+            <div class="steam"></div>
+            <div class="steam"></div>
+            <div class="cup-3d"></div>
+            <div class="saucer-3d"></div>
+        </div>
+        <h2 class="serif" style="letter-spacing: 0.25em; font-size: 1.1rem; color: var(--gold-light);">QING YUN · 晴云</h2>
+        <span style="font-size: 0.72rem; color: rgba(246,241,230,0.6); letter-spacing: 0.18em; margin-top: 8px;">CRAFTING TEA PERFECTION</span>
+    </div>
+
+    <div class="top-bar">
+        Complimentary Express Worldwide Shipping Over ¥300 ✦ Spring Harvest Longjing Now Available
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo serif">
+                QING YUN
+                <span>TEA HOUSE · 晴云</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#regions">Tea Regions</a></li>
+                <li><a href="#ceremony">Ceremony</a></li>
+                <li><a href="#story">Story</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="icon-btn" id="open-search" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="icon-btn" id="open-cart" aria-label="Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count">1</span>
+                </button>
+                <button class="icon-btn hamburger-btn" id="open-mobile-nav" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+        <div class="mobile-nav-header">
+            <span class="logo serif" style="flex-direction: row; gap: 8px; align-items: baseline;">QING YUN</span>
+            <span class="close-mobile-nav" id="close-mobile-nav"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#regions">Tea Regions</a></li>
+            <li><a href="#ceremony">Ceremony</a></li>
+            <li><a href="#story">Story</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="search-modal" id="search-modal">
+        <div class="search-container">
+            <span class="close-search" id="close-search"><i class="fa-solid fa-xmark"></i></span>
+            <div class="search-input-wrap">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" class="search-input" id="search-input" placeholder="Search cultivars, origin, notes..." autofocus>
+            </div>
+            <div class="search-suggestions">
+                <p>Frequent Inquiries:</p>
+                <div class="search-tags">
+                    <span class="search-tag" onclick="quickSearch('Longjing')">West Lake Longjing</span>
+                    <span class="search-tag" onclick="quickSearch('Tieguanyin')">Anxi Oolong</span>
+                    <span class="search-tag" onclick="quickSearch('Pu-erh')">Aged Pu-erh 2015</span>
+                    <span class="search-tag" onclick="quickSearch('Teaware')">Celadon Sets</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="tagline">West Lake Longjing · Est. 2009</span>
+                <h1 class="serif">Harvested from Mist, Brewed for Mindfulness</h1>
+                <p>Experience authentic single-origin Chinese loose-leaf teas sourced directly from historic tea estates in Hangzhou, Fujian, and Yunnan.</p>
+                <div class="hero-ctas">
+                    <a href="#shop" class="btn btn-primary">Explore Reserve</a>
+                    <a href="#ceremony" class="btn btn-outline">Brewing Guide</a>
+                </div>
+                <div class="hero-badges">
+                    <div class="trust-badge"><i class="fa-solid fa-leaf"></i> Hand-Picked Daily</div>
+                    <div class="trust-badge"><i class="fa-solid fa-mountain"></i> Single-Origin</div>
+                    <div class="trust-badge"><i class="fa-solid fa-fire"></i> Small-Batch Roasted</div>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=900&q=80" alt="Tea Ceremonial Pour" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <div class="marquee-item">Hand-Picked <i class="fa-solid fa-star"></i></div>
+            <div class="marquee-item">Single Estate <i class="fa-solid fa-star"></i></div>
+            <div class="marquee-item">Traditional Roasting <i class="fa-solid fa-star"></i></div>
+            <div class="marquee-item">Sustainably Farmed <i class="fa-solid fa-star"></i></div>
+            <div class="marquee-item">Award-Winning Quality <i class="fa-solid fa-star"></i></div>
+            <div class="marquee-item">Hand-Picked <i class="fa-solid fa-star"></i></div>
+            <div class="marquee-item">Single Estate <i class="fa-solid fa-star"></i></div>
+            <div class="marquee-item">Traditional Roasting <i class="fa-solid fa-star"></i></div>
+            <div class="marquee-item">Sustainably Farmed <i class="fa-solid fa-star"></i></div>
+            <div class="marquee-item">Award-Winning Quality <i class="fa-solid fa-star"></i></div>
+        </div>
+    </div>
+
+    <section class="section-padding">
+        <div class="container">
+            <span class="tagline text-center">Curated Collections</span>
+            <h2 class="section-title text-center reveal">Shop By Category</h2>
+            <p class="section-desc text-center">Discover carefully preserved leaves categorized by oxidation, terroir, and craftsmanship.</p>
+
+            <div class="category-grid">
+                <div class="category-card reveal">
+                    <img src="https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?auto=format&fit=crop&w=800&q=80" alt="Green Tea Leaves">
+                    <div class="category-overlay">
+                        <h3 class="serif">Green Tea</h3>
+                        <span>12 Single-Estate Varieties</span>
+                    </div>
+                </div>
+                <div class="category-card reveal">
+                    <img src="https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?auto=format&fit=crop&w=800&q=80" alt="Oolong Tea Preparation">
+                    <div class="category-overlay">
+                        <h3 class="serif">Oolong</h3>
+                        <span>8 High-Mountain Varieties</span>
+                    </div>
+                </div>
+                <div class="category-card reveal">
+                    <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?auto=format&fit=crop&w=800&q=80" alt="Vintage Pu-erh Tea">
+                    <div class="category-overlay">
+                        <h3 class="serif">Pu-erh</h3>
+                        <span>6 Vintage Aged Cakes</span>
+                    </div>
+                </div>
+                <div class="category-card reveal">
+                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80" alt="Handmade Teaware">
+                    <div class="category-overlay">
+                        <h3 class="serif">Tea Sets</h3>
+                        <span>15 Artisanal Ceramic Items</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider-gold"></div>
+
+    <section id="shop" class="section-padding">
+        <div class="container">
+            <span class="tagline text-center">Seasonal Reserve</span>
+            <h2 class="section-title text-center reveal">Our Bestselling Harvests</h2>
+            <div class="filter-tabs">
+                <button class="tab-btn active" onclick="filterProducts('All', this)">All</button>
+                <button class="tab-btn" onclick="filterProducts('Green', this)">Green</button>
+                <button class="tab-btn" onclick="filterProducts('Oolong', this)">Oolong</button>
+                <button class="tab-btn" onclick="filterProducts('Pu-erh', this)">Pu-erh</button>
+                <button class="tab-btn" onclick="filterProducts('Sets', this)">Sets</button>
+            </div>
+
+            <div class="products-grid" id="products-grid">
+                <div class="product-card" data-category="Green">
+                    <span class="badge badge-gold product-badge">Limited Harvest</span>
+                    <div class="product-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1641997829221-a7d363722a1b?auto=format&fit=crop&w=600&q=80" alt="Supreme Dragon Well">
+                    </div>
+                    <h3 class="product-title serif">Supreme Dragon Well</h3>
+                    <span class="product-cn-name">西湖龙井 · First Flush</span>
+                    <p class="product-notes">Chestnut notes with sweet orchid finish</p>
+                    <div class="product-meta">
+                        <span class="product-price">¥280</span>
+                        <button class="add-cart-btn" onclick="addToCart('Supreme Dragon Well', 280, 'https://images.unsplash.com/photo-1641997829221-a7d363722a1b?auto=format&fit=crop&w=200&q=80')">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="Oolong">
+                    <span class="badge badge-gold product-badge">Bestseller</span>
+                    <div class="product-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=600&q=80" alt="Anxi Tieguanyin">
+                    </div>
+                    <h3 class="product-title serif">Anxi Tieguanyin</h3>
+                    <span class="product-cn-name">安溪铁观音 · Iron Goddess</span>
+                    <p class="product-notes">Floral bouquet with smooth buttery texture</p>
+                    <div class="product-meta">
+                        <span class="product-price">¥195</span>
+                        <button class="add-cart-btn" onclick="addToCart('Anxi Tieguanyin', 195, 'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=200&q=80')">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="Pu-erh">
+                    <span class="badge badge-gold product-badge">New</span>
+                    <div class="product-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?auto=format&fit=crop&w=600&q=80" alt="Aged Pu-erh Cake">
+                    </div>
+                    <h3 class="product-title serif">Aged Ripened Pu-erh</h3>
+                    <span class="product-cn-name">云南普洱 · 2015 Vintage</span>
+                    <p class="product-notes">Earthy, velvety smooth, notes of camphor</p>
+                    <div class="product-meta">
+                        <span class="product-price">¥340</span>
+                        <button class="add-cart-btn" onclick="addToCart('Aged Ripened Pu-erh', 340, 'https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?auto=format&fit=crop&w=200&q=80')">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="Oolong">
+                    <div class="product-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?auto=format&fit=crop&w=600&q=80" alt="Da Hong Pao">
+                    </div>
+                    <h3 class="product-title serif">Da Hong Pao Rock Tea</h3>
+                    <span class="product-cn-name">武夷大红袍 · Cliff Oolong</span>
+                    <p class="product-notes">Smoky charcoal aroma, mineral richness</p>
+                    <div class="product-meta">
+                        <span class="product-price">¥310</span>
+                        <button class="add-cart-btn" onclick="addToCart('Da Hong Pao Rock Tea', 310, 'https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?auto=format&fit=crop&w=200&q=80')">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="Green">
+                    <span class="badge badge-gold product-badge">Bestseller</span>
+                    <div class="product-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80" alt="Jasmine Dragon Pearls">
+                    </div>
+                    <h3 class="product-title serif">Jasmine Dragon Pearls</h3>
+                    <span class="product-cn-name">茉莉花龙珠 · Hand-Rolled</span>
+                    <p class="product-notes">Fragrant jasmine essence, sweet cup</p>
+                    <div class="product-meta">
+                        <span class="product-price">¥160</span>
+                        <button class="add-cart-btn" onclick="addToCart('Jasmine Dragon Pearls', 160, 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=200&q=80')">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="Sets">
+                    <div class="product-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1470162656305-6f429ba817bf?auto=format&fit=crop&w=600&q=80" alt="Celadon Tea Set">
+                    </div>
+                    <h3 class="product-title serif">Longquan Celadon Set</h3>
+                    <span class="product-cn-name">龙泉青瓷茶具 · Handcrafted</span>
+                    <p class="product-notes">Jade glaze pot & 4 double-wall cups</p>
+                    <div class="product-meta">
+                        <span class="product-price">¥580</span>
+                        <button class="add-cart-btn" onclick="addToCart('Longquan Celadon Set', 580, 'https://images.unsplash.com/photo-1470162656305-6f429ba817bf?auto=format&fit=crop&w=200&q=80')">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding spotlight">
+        <div class="container spotlight-grid">
+            <div class="spotlight-gallery reveal">
+                <img src="https://images.unsplash.com/photo-1641997829221-a7d363722a1b?auto=format&fit=crop&w=900&q=80" id="main-spotlight-img" class="spotlight-main-img" alt="Pre-Qingming Dragon Well">
+                <div class="spotlight-thumbs">
+                    <img src="https://images.unsplash.com/photo-1641997829221-a7d363722a1b?auto=format&fit=crop&w=200&q=80" class="spotlight-thumb active" onclick="changeSpotlightImg(this.src, this)" alt="Thumb 1">
+                    <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=200&q=80" class="spotlight-thumb" onclick="changeSpotlightImg(this.src, this)" alt="Thumb 2">
+                    <img src="https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?auto=format&fit=crop&w=200&q=80" class="spotlight-thumb" onclick="changeSpotlightImg(this.src, this)" alt="Thumb 3">
+                </div>
+            </div>
+            <div class="spotlight-info">
+                <span class="tagline">Master Reserve Spotlight</span>
+                <h2 class="serif">Pre-Qingming Dragon Well</h2>
+                <p style="font-weight: 300; opacity: 0.85;">Harvested strictly prior to the Qingming Festival in early April, when tender leaf buds hold peak natural amino acids and rich sweetness.</p>
+                
+                <div class="specs-grid">
+                    <div class="spec-item"><label>Origin</label><span>Shi Feng Village</span></div>
+                    <div class="spec-item"><label>Elevation</label><span>450m</span></div>
+                    <div class="spec-item"><label>Harvest Date</label><span>March 2026</span></div>
+                </div>
+
+                <div class="steeping-card">
+                    <h4><i class="fa-solid fa-mug-hot"></i> Steeping Ritual Guide</h4>
+                    <p>Water: 80°C (176°F) | Tea: 3g | Volume: 150ml | Time: 90 Seconds</p>
+                </div>
+
+                <div class="purchase-controls">
+                    <div class="size-selector">
+                        <button class="size-btn active" onclick="selectSize(this)">50g Tin</button>
+                        <button class="size-btn" onclick="selectSize(this)">100g Box</button>
+                    </div>
+                    <div class="quantity-stepper">
+                        <button onclick="updateSpotlightQty(-1)">-</button>
+                        <span id="spotlight-qty">1</span>
+                        <button onclick="updateSpotlightQty(1)">+</button>
+                    </div>
+                </div>
+
+                <button class="btn btn-outline" style="border-color: var(--antique-gold); color: white; width: 100%;" onclick="addSpotlightToCart()">
+                    Add To Cart — ¥<span id="spotlight-price">420</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="regions" class="section-padding">
+        <div class="container">
+            <span class="tagline text-center">Terroir & Origin</span>
+            <h2 class="section-title text-center reveal">Renowned Tea Terroirs</h2>
+            <p class="section-desc text-center">Each region’s distinct microclimate imbues leaves with an unrepeatable signature profile.</p>
+
+            <div class="regions-grid">
+                <div class="region-card reveal">
+                    <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=800&q=80" alt="Hangzhou West Lake" class="region-img">
+                    <div class="region-content">
+                        <div class="region-meta"><span>Zhejiang Province</span><span>300M - 500M</span></div>
+                        <h3 class="serif">West Lake, Hangzhou</h3>
+                        <p class="region-sig">Signature: Longjing (Dragon Well)</p>
+                        <p>Misty lake basins and acidic soil yield nutty green teas with flat pan-fired leaves.</p>
+                    </div>
+                </div>
+
+                <div class="region-card reveal">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Wuyi Mountains" class="region-img">
+                    <div class="region-content">
+                        <div class="region-meta"><span>Fujian Province</span><span>600M - 900M</span></div>
+                        <h3 class="serif">Wuyi Mountains</h3>
+                        <p class="region-sig">Signature: Da Hong Pao Rock Oolong</p>
+                        <p>Volcanic red sandstone cliffs impart a distinct mineral depth ("Yan Yun") to slowly roasted cliff teas.</p>
+                    </div>
+                </div>
+
+                <div class="region-card reveal">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Yunnan Pu'er Forests" class="region-img">
+                    <div class="region-content">
+                        <div class="region-meta"><span>Yunnan Province</span><span>1200M - 1800M</span></div>
+                        <h3 class="serif">Pu'er & Xishuangbanna</h3>
+                        <p class="region-sig">Signature: Ancient Tree Pu-erh</p>
+                        <p>Centuries-old arbor tea trees in pristine high mountain forests offer unparalleled depth and aging potential.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ceremony" class="section-padding" style="background-color: var(--bg-cream-card);">
+        <div class="container">
+            <span class="tagline text-center">Gongfu Tea Ritual</span>
+            <h2 class="section-title text-center reveal">The Art of Mindful Brewing</h2>
+            <p class="section-desc text-center">Four steps to honor the leaf and extract rich taste harmony.</p>
+
+            <div class="ceremony-steps">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <span class="step-icon"><i class="fa-solid fa-faucet-drip"></i></span>
+                    <h3 class="serif">Warm Vessel</h3>
+                    <p>Rinse teapot and cups with boiling water to warm the clay and equalize temperature.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <span class="step-icon"><i class="fa-solid fa-leaf"></i></span>
+                    <h3 class="serif">Awaken Leaf</h3>
+                    <p>Pour hot water over dry leaves and discard immediately. Inhale the fragrant steam.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <span class="step-icon"><i class="fa-solid fa-hourglass-half"></i></span>
+                    <h3 class="serif">Steep Gently</h3>
+                    <p>Infuse for short intervals, letting tightly twisted leaves open gradually in water.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">4</div>
+                    <span class="step-icon"><i class="fa-solid fa-whiskey-glass"></i></span>
+                    <h3 class="serif">Share & Savor</h3>
+                    <p>Pour evenly into tasting cups. Observe clarity, inhale bouquet, and sip slowly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="story" class="section-padding">
+        <div class="container story-grid">
+            <div class="story-img-wrap reveal">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=800&q=80" class="story-img" alt="Founder Master Chen">
+                <div class="quote-box">
+                    <p>"Tea is not just a beverage; it is a quiet conversation between nature, time, and human patience."</p>
+                    <span>— Master Chen, Founder</span>
+                </div>
+            </div>
+            <div>
+                <span class="tagline">Heritage & Vision</span>
+                <h2 class="section-title">Preserving Centuries of Craftsmanship</h2>
+                <p style="margin-bottom: 20px; color: var(--text-muted);">Founded in 2009 along West Lake, Qing Yun Tea House started as a sanctuary for collectors seeking forgotten cultivars and traditional hand-roasting techniques.</p>
+                <p style="color: var(--text-muted);">Today, we partner directly with multi-generational family estates across China, bringing authentic Gongfu rituals to modern homes.</p>
+
+                <div class="counters-grid">
+                    <div class="counter-item"><h3 class="serif">17+</h3><p>Years Heritage</p></div>
+                    <div class="counter-item"><h3 class="serif">24</h3><p>Partner Gardens</p></div>
+                    <div class="counter-item"><h3 class="serif">100%</h3><p>Direct Sourced</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: var(--bg-cream-card);">
+        <div class="container">
+            <span class="tagline text-center">Ethical Craft</span>
+            <h2 class="section-title text-center reveal">Rooted in Ecological Harmony</h2>
+            <p class="section-desc text-center">Honoring the land that yields our leaves and supporting rural farming communities.</p>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3 class="serif">Direct Farm Trade</h3>
+                    <p>We eliminate intermediaries to ensure tea farmers receive direct fair premiums for seasonal harvests.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-seedling"></i></div>
+                    <h3 class="serif">Organic Practices</h3>
+                    <p>Our gardens cultivate natural flora ecosystems to deter insects without chemical sprays.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-box-open"></i></div>
+                    <h3 class="serif">Eco Packaging</h3>
+                    <p>Plastic-free airtight tin canisters designed to be reused and recycled for years.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-sun"></i></div>
+                    <h3 class="serif">Solar Processing</h3>
+                    <p>Utilizing clean solar energy for green tea wilting and roasting facilities in rural mountains.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <span class="tagline text-center">Community Impressions</span>
+            <h2 class="section-title text-center reveal">Words From Connoisseurs</h2>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div>
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">"The Pre-Qingming Dragon Well is remarkable. Unsealing the tin released an aroma that took me straight back to Hangzhou."</p>
+                    </div>
+                    <div class="review-author">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Elena Rostova" class="avatar">
+                        <div class="author-info"><h4 class="serif">Elena Rostova</h4><span>London, UK</span></div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div>
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">"Pristine quality and fast air transport. The steeping guide card included in the gift set was a thoughtful, elegant detail."</p>
+                    </div>
+                    <div class="review-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Marcus Vance" class="avatar">
+                        <div class="author-info"><h4 class="serif">Marcus Vance</h4><span>Singapore</span></div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div>
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">"The 2015 aged Pu-erh cake has incredible depth. It easily holds flavor across ten re-steeps in a gaiwan."</p>
+                    </div>
+                    <div class="review-author">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" alt="Mei-Ling Zhou" class="avatar">
+                        <div class="author-info"><h4 class="serif">Mei-Ling Zhou</h4><span>San Francisco, USA</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: var(--bg-cream-card);">
+        <div class="container">
+            <span class="tagline text-center">Art of Gifting</span>
+            <h2 class="section-title text-center reveal">Curated Gift Collections</h2>
+
+            <div class="gifts-grid">
+                <div class="gift-card">
+                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80" alt="Imperial Trio Gift Box" class="gift-img">
+                    <div class="gift-content">
+                        <h3 class="serif">Imperial Seasons Trio</h3>
+                        <p>Features 3 tins of our Green, Oolong, and Pu-erh teas + hand-carved bamboo spoon.</p>
+                        <div class="gift-bottom">
+                            <span class="product-price">¥480</span>
+                            <button class="btn btn-outline" onclick="addToCart('Imperial Seasons Trio', 480, 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=200&q=80')">Add Gift Set</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gift-card">
+                    <img src="https://images.unsplash.com/photo-1470162656305-6f429ba817bf?auto=format&fit=crop&w=800&q=80" alt="Gongfu Tea Starter Set" class="gift-img">
+                    <div class="gift-content">
+                        <h3 class="serif">Gongfu Starter Box</h3>
+                        <p>Includes handmade Gaiwan, 2 cups, bamboo tray, and 50g Reserve Longjing.</p>
+                        <div class="gift-bottom">
+                            <span class="product-price">¥620</span>
+                            <button class="btn btn-outline" onclick="addToCart('Gongfu Starter Box', 620, 'https://images.unsplash.com/photo-1470162656305-6f429ba817bf?auto=format&fit=crop&w=200&q=80')">Add Gift Set</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gift-card">
+                    <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80" alt="Master Collector Set" class="gift-img">
+                    <div class="gift-content">
+                        <h3 class="serif">Master Reserve Collector</h3>
+                        <p>Rare pre-qingming teas in a lacquered heirloom box with wax-sealed certificate.</p>
+                        <div class="gift-bottom">
+                            <span class="product-price">¥1280</span>
+                            <button class="btn btn-outline" onclick="addToCart('Master Reserve Collector', 1280, 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=200&q=80')">Add Gift Set</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="press-strip">
+        <div class="container press-logos">
+            <span class="press-item">GLOBAL TEA CHAMPIONSHIP</span>
+            <span class="press-item">TEA JOURNAL INTERNATIONAL</span>
+            <span class="press-item">HANGZHOU HERITAGE GUILD</span>
+            <span class="press-item">ORIENTAL GOURMET AWARDS</span>
+        </div>
+    </div>
+
+    <section class="section-padding">
+        <div class="container">
+            <span class="tagline text-center">Visual Atmosphere</span>
+            <h2 class="section-title text-center reveal">Life Around The Tea Estates</h2>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=600&q=80" alt="Tea Garden Landscape">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80" alt="Steeping Tea">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1641997829221-a7d363722a1b?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1641997829221-a7d363722a1b?auto=format&fit=crop&w=600&q=80" alt="Fresh Tea Leaves">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80" alt="Tea Ceremony Cups">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: var(--bg-cream-card);">
+        <div class="container">
+            <span class="tagline text-center">Client Guidance</span>
+            <h2 class="section-title text-center reveal">Frequently Asked Questions</h2>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is the recommended water temperature for green tea?
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Green tea should be steeped with water around 75°C – 80°C (167°F – 176°F). Boiling water can scorch delicate leaf buds and release astringency.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How long does loose-leaf tea remain fresh?
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Green teas and light oolongs are best enjoyed within 12 months. Dark roasted oolongs and Pu-erh teas improve over years when stored in dry environments.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you offer international express shipping?
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we ship to over 50 countries globally using climate-protected sealed air express packaging.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are custom corporate gift sets available?
+                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We provide bespoke gift box packaging, custom wax seals, and personalized brand inserts for corporate orders over 20 sets.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding newsletter">
+        <div class="container">
+            <span class="tagline" style="color: var(--gold-light);">Inner Circle</span>
+            <h2 class="serif">Seasonal Harvest Notifications</h2>
+            <p style="font-weight: 300; opacity: 0.85; max-width: 520px; margin: 12px auto 0 auto;">Subscribe to receive rare single-batch harvest release dates and private Gongfu tasting invitations.</p>
+
+            <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+                <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
+                <button type="submit" class="btn btn-primary" style="background: var(--antique-gold); border-color: var(--antique-gold);">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="footer-logo serif">QING YUN TEA HOUSE</a>
+                    <p style="color: rgba(246, 241, 230, 0.65); margin-bottom: 20px; font-weight: 300;">Purveyors of high-altitude loose-leaf teas from historic family tea estates since 2009.</p>
+                    <p style="color: var(--gold-light); letter-spacing: 0.1em; font-size: 0.8rem;">Hangzhou · Fujian · Yunnan</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="serif">Shop Reserve</h4>
+                    <ul class="footer-links">
+                        <li><a href="#shop">Green Tea</a></li>
+                        <li><a href="#shop">High-Mountain Oolong</a></li>
+                        <li><a href="#shop">Aged Vintage Pu-erh</a></li>
+                        <li><a href="#shop">Artisanal Teaware</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="serif">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#story">Our Story</a></li>
+                        <li><a href="#regions">Tea Terroirs</a></li>
+                        <li><a href="#ceremony">Brewing Art</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="serif">Tea House Address</h4>
+                    <p style="color: rgba(246, 241, 230, 0.7); margin-bottom: 8px;">No. 88 West Lake Road, Hangzhou, China</p>
+                    <p style="color: rgba(246, 241, 230, 0.7); margin-bottom: 8px;">concierge@qingyuntea.com</p>
+                    <p style="color: rgba(246, 241, 230, 0.7);">+86 571 8899 0123</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Qing Yun Tea House Co., Ltd. All Rights Reserved.</p>
+                <div class="payment-icons">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-drawer-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3 class="serif">Your Tea Selection</h3>
+            <span class="close-cart" id="close-cart"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+
+        <div class="shipping-progress">
+            <span id="shipping-msg">Add ¥20.00 more for Free Worldwide Express Shipping!</span>
+            <div class="progress-bar">
+                <div class="progress-fill" id="shipping-bar"></div>
+            </div>
+        </div>
+
+        <div class="cart-body" id="cart-body"></div>
+
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">¥280</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" onclick="alert('Proceeding to secure payment checkout portal UI.')">Proceed To Checkout</button>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()"><i class="fa-solid fa-xmark"></i></span>
+        <img src="" id="lightbox-img" alt="Enlarged View">
+    </div>
+
+    <script>
+        // 1. Loader Fadeout
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => { preloader.classList.add('hidden'); }, 800);
+        });
+
+        // 1b. Navbar scroll shadow
+        const navbarEl = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                navbarEl.classList.add('scrolled');
+            } else {
+                navbarEl.classList.remove('scrolled');
+            }
+        });
+
+        // 1b-2. Mobile nav drawer
+        const mobileNavDrawer = document.getElementById('mobile-nav-drawer');
+        const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+        const openMobileNavBtn = document.getElementById('open-mobile-nav');
+        const closeMobileNavBtn = document.getElementById('close-mobile-nav');
+
+        function toggleMobileNav(open) {
+            mobileNavDrawer.classList.toggle('active', open);
+            mobileNavOverlay.classList.toggle('active', open);
+        }
+
+        openMobileNavBtn.addEventListener('click', () => toggleMobileNav(true));
+        closeMobileNavBtn.addEventListener('click', () => toggleMobileNav(false));
+        mobileNavOverlay.addEventListener('click', () => toggleMobileNav(false));
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', () => toggleMobileNav(false));
+        });
+
+        // 1c. Scroll reveal (single orchestrated pattern)
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // 2. Cart System State
+        let cart = [
+            { 
+                name: "Supreme Dragon Well", 
+                price: 280, 
+                qty: 1, 
+                img: "https://images.unsplash.com/photo-1641997829221-a7d363722a1b?auto=format&fit=crop&w=200&q=80" 
+            }
+        ];
+
+        const cartDrawer = document.getElementById('cart-drawer');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const openCartBtn = document.getElementById('open-cart');
+        const closeCartBtn = document.getElementById('close-cart');
+
+        function toggleCart(open) {
+            if (open) {
+                cartDrawer.classList.add('active');
+                cartOverlay.classList.add('active');
+            } else {
+                cartDrawer.classList.remove('active');
+                cartOverlay.classList.remove('active');
+            }
+        }
+
+        openCartBtn.addEventListener('click', () => toggleCart(true));
+        closeCartBtn.addEventListener('click', () => toggleCart(false));
+        cartOverlay.addEventListener('click', () => toggleCart(false));
+
+        function renderCart() {
+            const cartBody = document.getElementById('cart-body');
+            const cartCount = document.querySelector('.cart-count');
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const shippingMsg = document.getElementById('shipping-msg');
+            const shippingBar = document.getElementById('shipping-bar');
+
+            cartBody.innerHTML = '';
+            let total = 0;
+            let count = 0;
+
+            if (cart.length === 0) {
+                cartBody.innerHTML = '<div class="empty-cart-msg"><p>Your tea selection is empty.</p></div>';
+            } else {
+                cart.forEach((item, index) => {
+                    total += item.price * item.qty;
+                    count += item.qty;
+
+                    const itemEl = document.createElement('div');
+                    itemEl.className = 'cart-item';
+                    itemEl.innerHTML = `
+                        <img src="${item.img}" alt="${item.name}" class="cart-item-img">
+                        <div class="cart-item-details">
+                            <h4>${item.name}</h4>
+                            <div class="cart-item-price">¥${item.price}</div>
+                            <div class="cart-item-controls">
+                                <button onclick="changeQty(${index}, -1)">-</button>
+                                <span>${item.qty}</span>
+                                <button onclick="changeQty(${index}, 1)">+</button>
+                                <i class="fa-solid fa-trash remove-item" onclick="removeItem(${index})"></i>
+                            </div>
+                        </div>
+                    `;
+                    cartBody.appendChild(itemEl);
+                });
+            }
+
+            cartCount.textContent = count;
+            subtotalEl.textContent = `¥${total}`;
+
+            // Shipping threshold logic (Free shipping above 300)
+            const freeThreshold = 300;
+            if (total >= freeThreshold) {
+                shippingMsg.textContent = "✦ You've unlocked Free Worldwide Express Shipping!";
+                shippingBar.style.width = "100%";
+            } else {
+                const diff = freeThreshold - total;
+                shippingMsg.textContent = `Add ¥${diff} more for Free Worldwide Express Shipping!`;
+                shippingBar.style.width = `${Math.min(100, (total / freeThreshold) * 100)}%`;
+            }
+        }
+
+        function addToCart(name, price, img) {
+            const existingIndex = cart.findIndex(item => item.name === name);
+            if (existingIndex > -1) {
+                cart[existingIndex].qty += 1;
+            } else {
+                cart.push({ name, price, qty: 1, img });
+            }
+            renderCart();
+            toggleCart(true);
+        }
+
+        function changeQty(index, change) {
+            cart[index].qty += change;
+            if (cart[index].qty <= 0) {
+                cart.splice(index, 1);
+            }
+            renderCart();
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            renderCart();
+        }
+
+        // 3. Search Modal Functionality
+        const searchModal = document.getElementById('search-modal');
+        const openSearchBtn = document.getElementById('open-search');
+        const closeSearchBtn = document.getElementById('close-search');
+
+        openSearchBtn.addEventListener('click', () => {
+            searchModal.classList.add('active');
+            document.getElementById('search-input').focus();
+        });
+
+        closeSearchBtn.addEventListener('click', () => {
+            searchModal.classList.remove('active');
+        });
+
+        function quickSearch(query) {
+            document.getElementById('search-input').value = query;
+            alert(`Searching catalog for: ${query}`);
+            searchModal.classList.remove('active');
+        }
+
+        // 4. Product Category Filters
+        function filterProducts(category, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const products = document.querySelectorAll('.product-card');
+            products.forEach(product => {
+                if (category === 'All' || product.getAttribute('data-category') === category) {
+                    product.style.display = 'flex';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        // 5. Featured Spotlight Controls
+        let spotlightQty = 1;
+        let spotlightBasePrice = 420;
+
+        function changeSpotlightImg(src, thumb) {
+            document.getElementById('main-spotlight-img').src = src;
+            document.querySelectorAll('.spotlight-thumb').forEach(t => t.classList.remove('active'));
+            thumb.classList.add('active');
+        }
+
+        function selectSize(btn) {
+            document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            if (btn.textContent.includes('100g')) {
+                spotlightBasePrice = 780;
+            } else {
+                spotlightBasePrice = 420;
+            }
+            updateSpotlightPrice();
+        }
+
+        function updateSpotlightQty(change) {
+            spotlightQty = Math.max(1, spotlightQty + change);
+            document.getElementById('spotlight-qty').textContent = spotlightQty;
+            updateSpotlightPrice();
+        }
+
+        function updateSpotlightPrice() {
+            document.getElementById('spotlight-price').textContent = spotlightBasePrice * spotlightQty;
+        }
+
+        function addSpotlightToCart() {
+            const price = spotlightBasePrice;
+            const size = document.querySelector('.size-btn.active').textContent;
+            addToCart(`Pre-Qingming Dragon Well (${size})`, price, 'https://images.unsplash.com/photo-1641997829221-a7d363722a1b?auto=format&fit=crop&w=200&q=80');
+        }
+
+        // 6. Accordion / FAQ System
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // 7. Lightbox Gallery
+        function openLightbox(imgSrc) {
+            const lightbox = document.getElementById('lightbox');
+            document.getElementById('lightbox-img').src = imgSrc;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // 8. Newsletter Handler
+        function handleSubscribe(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing to Qing Yun Tea House private release updates.');
+            e.target.reset();
+        }
+
+        // Initial Cart Render
+        renderCart();
+    </script>
+</body>
+</html>
